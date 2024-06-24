@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "letsparkour:block/slow_parkour_slab"
+    },
+    "type=double": {
+      "model": "letsparkour:block/slow_parkour_block"
+    },
+    "type=top": {
+      "model": "letsparkour:block/slow_parkour_slab_top"
+    }
+  }
+}

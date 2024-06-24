@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"BBB",
+		"BPB",
+		"BBB"
+	],
+	"key": {
+		"B": {
+			"item": "letsparkour:base_parkour_slab"
+		},
+	  	"P" : {
+		  	"item": "minecraft:piston"
+		}
+	},
+	"result": {
+		"id": "letsparkour:jump_parkour_slab",
+	  	"count" : 8
+	}
+}
