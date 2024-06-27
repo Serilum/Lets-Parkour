@@ -4,14 +4,15 @@
   "package": "com.natamus.letsparkour.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "EntityMixin",
-    "LivingEntityMixin"
+	"EntityMixin",
+	"LivingEntityMixin",
+	"ServerGamePacketListenerImplMixin"
   ],
   "client": [
   ],
   "server": [
   ],
   "injectors": {
-    "defaultRequire": 1
+	"defaultRequire": 1
   }
 }

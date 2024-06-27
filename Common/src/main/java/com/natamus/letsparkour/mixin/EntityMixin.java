@@ -49,6 +49,11 @@ public abstract class EntityMixin {
 			}
 		}
 
+		Entity entity = (Entity)(Object)this;
+		if (entity.getDeltaMovement().y != 0) {
+			return;
+		}
+
 		Block block = blockState.getBlock();
 		if (block instanceof FastParkourSlab) {
 			if (ConfigHandler.enableFastParkourBlock) {
