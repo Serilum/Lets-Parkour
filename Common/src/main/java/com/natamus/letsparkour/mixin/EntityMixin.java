@@ -55,15 +55,11 @@ public abstract class EntityMixin {
 		}
 
 		Block block = blockState.getBlock();
-		if (block instanceof FastParkourSlab) {
-			if (ConfigHandler.enableFastParkourBlock) {
-				cir.setReturnValue((float) ConfigHandler.fastBlockBaseSpeedFactor * (1 + ((blockState.getValue(ParkourSlab.BLOCK_HEIGHT) - 1) * 0.25F)));
-			}
+		if (ConfigHandler.enableFastParkourBlock && block instanceof FastParkourSlab) {
+			cir.setReturnValue((float) ConfigHandler.fastBlockBaseSpeedFactor * (1 + ((blockState.getValue(ParkourSlab.BLOCK_HEIGHT) - 1) * 0.25F)));
 		}
-		else if (block instanceof SlowParkourSlab) {
-			if (ConfigHandler.enableSlowParkourBlock) {
-				cir.setReturnValue((float) ConfigHandler.slowBlockBaseSpeedFactor / (1 + ((blockState.getValue(ParkourSlab.BLOCK_HEIGHT) - 1) * 1.0F)));
-			}
+		else if (ConfigHandler.enableSlowParkourBlock && block instanceof SlowParkourSlab) {
+			cir.setReturnValue((float) ConfigHandler.slowBlockBaseSpeedFactor / (1 + ((blockState.getValue(ParkourSlab.BLOCK_HEIGHT) - 1) * 1.0F)));
 		}
 	}
 }
