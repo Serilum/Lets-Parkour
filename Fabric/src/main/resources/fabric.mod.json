@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "letsparkour",
-  "version": "1.2",
+  "version": "1.3",
 
   "name": "Let's Parkour",
   "description": "Adds various parkour related blocks to create an awesome track.",

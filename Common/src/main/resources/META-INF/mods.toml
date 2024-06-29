@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="letsparkour"
-version="1.2"
+version="1.3"
 displayName="Let's Parkour"
 displayURL="https://serilum.com/mod/lets-parkour"
 authors="Rick South"
