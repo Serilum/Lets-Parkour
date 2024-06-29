@@ -10,18 +10,28 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = ServerGamePacketListenerImpl.class, priority = 1001)
 public abstract class ServerGamePacketListenerImplMixin {
 	@Shadow public ServerPlayer player;
 
-	@Inject(method = "handleMovePlayer(Lnet/minecraft/network/protocol/game/ServerboundMovePlayerPacket;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;isSingleplayerOwner()Z"), cancellable = true)
-	public void handleMovePlayer(ServerboundMovePlayerPacket $$0, CallbackInfo ci) {
+//	@Inject(method = "handleMovePlayer(Lnet/minecraft/network/protocol/game/ServerboundMovePlayerPacket;)V",
+//			at = @At(value = "INVOKE", target = "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;isSingleplayerOwner()Z"),
+//			cancellable = true)
+	@ModifyVariable(
+			method = "handleMovePlayer(Lnet/minecraft/network/protocol/game/ServerboundMovePlayerPacket;)V",
+			at = @At("STORE"),
+			slice = @Slice(
+					from = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerPlayer;isFallFlying()Z")
+			),
+			ordinal = 0
+	)
+	public boolean overrideMovementCheckIfParkouring(boolean isFallFlying) {
 		Level level = player.level();
 		BlockPos playerPos = player.blockPosition();
-		if (level.getBlockState(playerPos).getBlock() instanceof ParkourSlab || level.getBlockState(playerPos.below()).getBlock() instanceof ParkourSlab) {
-			ci.cancel();
-		}
+		return isFallFlying || level.getBlockState(playerPos).getBlock() instanceof ParkourSlab || level.getBlockState(playerPos.below()).getBlock() instanceof ParkourSlab;
 	}
 }
