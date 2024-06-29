@@ -126,7 +126,7 @@ public class ParkourSlab extends HorizontalDirectionalBlock implements SimpleWat
         }
 
         for (Pair<BlockPos, BlockState> pair : blockStatesToSet) {
-            level.setBlock(pair.getFirst(), pair.getSecond().setValue(BLOCK_HEIGHT, totalHeight), Block.UPDATE_NONE);
+            level.setBlock(pair.getFirst(), pair.getSecond().setValue(BLOCK_HEIGHT, totalHeight), Block.UPDATE_ALL);
         }
     }
 
