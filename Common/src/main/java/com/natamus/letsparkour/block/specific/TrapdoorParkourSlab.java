@@ -159,9 +159,9 @@ public class TrapdoorParkourSlab extends ParkourSlab {
 		DELAY_UNTIL_NEXT_TILT_STATE = Util.make(new Object2IntArrayMap<>(), (object2IntArrayMap) -> {
             object2IntArrayMap.defaultReturnValue(-1);
             object2IntArrayMap.put(Tilt.UNSTABLE, 10);
-			object2IntArrayMap.put(Tilt.PARTIAL, 20);
+			object2IntArrayMap.put(Tilt.PARTIAL, 10);
             object2IntArrayMap.put(Tilt.FULL, 100);
         });
-        TRAPDOOR_SHAPES = ImmutableMap.of(Tilt.NONE, Block.box(0.0, 8.0, 0.0, 16.0, 15.0, 16.0), Tilt.UNSTABLE, Block.box(0.0, 8.0, 0.0, 16.0, 15.5, 16.0), Tilt.PARTIAL, Block.box(0.0, 8.0, 0.0, 16.0, 13.5, 16.0), Tilt.FULL, Shapes.empty());
+        TRAPDOOR_SHAPES = ImmutableMap.of(Tilt.NONE, Block.box(0.0, 8.0, 0.0, 16.0, 15.0, 16.0), Tilt.UNSTABLE, Block.box(0.0, 8.0, 0.0, 16.0, 15.0, 16.0), Tilt.PARTIAL, Block.box(0.0, 8.0, 0.0, 16.0, 13.0, 16.0), Tilt.FULL, Shapes.empty());
     }
 }

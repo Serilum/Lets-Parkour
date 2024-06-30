@@ -37,6 +37,7 @@ public class ModCommon {
 		Services.REGISTERBLOCK.registerBlockWithItem(modEventBusObject, ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "slippery_parkour_slab"), () -> new SlipperyParkourSlab(BlockBehaviour.Properties.of().strength(1.2F, 6.0F)), functionalBlocksResourceKey);
 
 		Services.REGISTERBLOCK.registerBlockWithItem(modEventBusObject, ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "illusion_parkour_slab"), () -> new IllusionParkourSlab(BlockBehaviour.Properties.of().strength(1.2F, 6.0F).noCollission()), functionalBlocksResourceKey);
+
 		Services.REGISTERBLOCK.registerBlockWithItem(modEventBusObject, ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "trapdoor_parkour_slab"), () -> new TrapdoorParkourSlab(BlockBehaviour.Properties.of().strength(1.2F, 6.0F)), functionalBlocksResourceKey, true);
 	}
 
