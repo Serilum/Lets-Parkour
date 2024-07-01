@@ -30,9 +30,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class ParkourSlab extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
     public static final MapCodec<ParkourSlab> CODEC = simpleCodec(ParkourSlab::new);
@@ -41,8 +39,12 @@ public class ParkourSlab extends HorizontalDirectionalBlock implements SimpleWat
     public static final BooleanProperty WATERLOGGED;
     public static final IntegerProperty BLOCK_HEIGHT;
 
+    private static final int maxTotalHeight = ParkourBlockStateProperties.BLOCK_HEIGHT.getPossibleValues().size()-1;
+
     protected static final VoxelShape BOTTOM_AABB;
     protected static final VoxelShape TOP_AABB;
+
+    private final Set<BlockPos> processingPositions = new HashSet<>();
 
     public @NotNull MapCodec<ParkourSlab> codec() {
         return CODEC;
@@ -89,9 +91,9 @@ public class ParkourSlab extends HorizontalDirectionalBlock implements SimpleWat
     }
 
     public void onPlace(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull BlockState blockState2, boolean bl) {
-        calculateBlockHeight(blockState, level, blockPos);
-
-        // level.scheduleTick(blockPos, this, 20);
+        if (!processingPositions.contains(blockPos)) {
+            calculateBlockHeight(blockState, level, blockPos);
+        }
     }
 
     public void onRemove(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull BlockState blockState2, boolean bl) {
@@ -100,35 +102,64 @@ public class ParkourSlab extends HorizontalDirectionalBlock implements SimpleWat
         }
     }
 
-    public void calculateBlockHeight(BlockState blockState, Level level, BlockPos blockPos) {
+public void calculateBlockHeight(BlockState blockState, Level level, BlockPos blockPos) {
+    if (processingPositions.contains(blockPos)) {
+        return;
+    }
+
+    processingPositions.add(blockPos);
+    try {
         Block thisBlock = blockState.getBlock();
         int totalHeight = 0;
 
         List<Pair<BlockPos, BlockState>> blockStatesToSet = new ArrayList<>();
 
         int y = blockPos.getY();
-        for (int yo = y-10; yo < y+10; yo++) {
+        for (int yo = y; yo >= level.getMinBuildHeight(); yo--) {
             BlockPos checkBlockPos = new BlockPos(blockPos.getX(), yo, blockPos.getZ());
             BlockState checkBlockState = level.getBlockState(checkBlockPos);
             if (checkBlockState.getBlock().equals(thisBlock)) {
                 if (checkBlockState.getValue(TYPE) == SlabType.DOUBLE) {
                     totalHeight += 2;
-                }
-                else {
+                } else {
                     totalHeight += 1;
                 }
 
                 blockStatesToSet.add(Pair.of(checkBlockPos.immutable(), checkBlockState));
-            }
-            else if (totalHeight > 0) {
+            } else {
                 break;
             }
         }
 
-        for (Pair<BlockPos, BlockState> pair : blockStatesToSet) {
-            level.setBlock(pair.getFirst(), pair.getSecond().setValue(BLOCK_HEIGHT, totalHeight), Block.UPDATE_ALL);
+        for (int yo = y + 1; yo < level.getMaxBuildHeight(); yo++) {
+            BlockPos checkBlockPos = new BlockPos(blockPos.getX(), yo, blockPos.getZ());
+            BlockState checkBlockState = level.getBlockState(checkBlockPos);
+            if (checkBlockState.getBlock().equals(thisBlock)) {
+                if (checkBlockState.getValue(TYPE) == SlabType.DOUBLE) {
+                    totalHeight += 2;
+                } else {
+                    totalHeight += 1;
+                }
+
+                blockStatesToSet.add(Pair.of(checkBlockPos.immutable(), checkBlockState));
+            } else {
+                break;
+            }
         }
+
+       if (totalHeight > maxTotalHeight) {
+           totalHeight = maxTotalHeight;
+       }
+
+        for (Pair<BlockPos, BlockState> pair : blockStatesToSet) {
+            if (pair.getSecond().getValue(BLOCK_HEIGHT) != totalHeight) {
+                level.setBlock(pair.getFirst(), pair.getSecond().setValue(BLOCK_HEIGHT, totalHeight), Block.UPDATE_ALL);
+            }
+        }
+    } finally {
+        processingPositions.remove(blockPos);
     }
+}
 
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
