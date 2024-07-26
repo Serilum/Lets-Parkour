@@ -13,7 +13,7 @@ public class SoftParkourSlab extends ParkourSlab {
         super(properties);
     }
 
-    public void fallOn(Level level, @NotNull BlockState state, @NotNull BlockPos pos, Entity entity, float fallDistance) {
+    public void fallOn(@NotNull Level level, @NotNull BlockState state, @NotNull BlockPos pos, @NotNull Entity entity, float fallDistance) {
 		if (!ConfigHandler.enableSoftParkourBlock) {
 			return;
 		}
