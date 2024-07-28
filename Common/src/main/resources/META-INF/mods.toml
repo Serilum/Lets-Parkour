@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="letsparkour"
-version="1.7"
+version="1.8"
 displayName="Let's Parkour"
 displayURL="https://serilum.com/mod/lets-parkour"
 authors="Rick South"
@@ -22,7 +22,7 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
 [[dependencies.letsparkour]]
     modId="collective"
     mandatory=true
-    versionRange="[7.74,)"
+    versionRange="[7.78,)"
     ordering="NONE"
     side="BOTH"
 

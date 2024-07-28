@@ -1,6 +1,7 @@
 package com.natamus.letsparkour;
 
 import com.natamus.collective.check.RegisterMod;
+import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.letsparkour.neoforge.config.IntegrateNeoForgeConfig;
 import com.natamus.letsparkour.util.Reference;
 import net.neoforged.bus.api.IEventBus;
@@ -11,6 +12,10 @@ import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
 @Mod(Reference.MOD_ID)
 public class ModNeoForge {
 	public ModNeoForge(IEventBus modEventBus) {
+		if (!ShouldLoadCheck.shouldLoad(Reference.MOD_ID)) {
+			return;
+		}
+
 		modEventBus.addListener(this::loadComplete);
 
 		setGlobalConstants();
