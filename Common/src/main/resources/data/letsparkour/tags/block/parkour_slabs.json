@@ -1,0 +1,13 @@
+{
+  "values": [
+    "letsparkour:base_parkour_slab",
+    "letsparkour:soft_parkour_slab",
+    "letsparkour:slow_parkour_slab",
+    "letsparkour:fast_parkour_slab",
+    "letsparkour:jelly_parkour_slab",
+    "letsparkour:jump_parkour_slab",
+    "letsparkour:slippery_parkour_slab",
+    "letsparkour:illusion_parkour_slab",
+    "letsparkour:trapdoor_parkour_slab"
+  ]
+}
