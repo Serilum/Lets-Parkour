@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"BBB",
+		"BHB",
+		"BBB"
+	],
+	"key": {
+		"B": {
+			"item": "letsparkour:base_parkour_slab"
+		},
+	  	"H" : {
+		  	"item": "minecraft:hay_block"
+		}
+	},
+	"result": {
+		"id": "letsparkour:soft_parkour_slab",
+	  	"count" : 8
+	}
+}
