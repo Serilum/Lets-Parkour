@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="letsparkour"
-version="1.9"
+version="2.0"
 displayName="Let's Parkour"
 displayURL="https://serilum.com/mod/lets-parkour"
 authors="Rick South"
@@ -14,7 +14,7 @@ description='''Adds various parkour related blocks to create an awesome track.
 '''
 credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
 
-Alister, Andrean Olgo, aternosorg, Cherriesaurus, kate1073, Michael W. S., Tyler Behl, XAgent   
+Alister, Andrean Olgo, aternosorg, Cherriesaurus, LyraKeaton, Michael W. S., Tyler Behl, XAgent   
 
 If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
 '''

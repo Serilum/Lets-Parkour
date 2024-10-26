@@ -6,12 +6,8 @@
 		"BBB"
 	],
 	"key": {
-		"B": {
-			"item": "letsparkour:base_parkour_slab"
-		},
-	  	"I" : {
-		  	"item": "minecraft:ice"
-		}
+		"B": "letsparkour:base_parkour_slab",
+	  	"I" : "minecraft:ice"
 	},
 	"result": {
 		"id": "letsparkour:slippery_parkour_slab",

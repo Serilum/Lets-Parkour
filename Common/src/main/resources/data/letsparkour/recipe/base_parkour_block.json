@@ -6,15 +6,9 @@
 		"LBL"
 	],
 	"key": {
-		"C": {
-			"item": "minecraft:copper_ingot"
-		},
-		"B": {
-			"item": "minecraft:brick"
-		},
-	  	"L" : {
-		  	"tag": "minecraft:logs"
-		}
+		"C": "minecraft:copper_ingot",
+		"B": "minecraft:brick",
+	  	"L": "#minecraft:logs"
 	},
 	"result": {
 		"id": "letsparkour:base_parkour_slab",

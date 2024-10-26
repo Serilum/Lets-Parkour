@@ -6,12 +6,8 @@
 		"BBB"
 	],
 	"key": {
-		"B": {
-			"item": "letsparkour:base_parkour_slab"
-		},
-	  	"S" : {
-		  	"item": "minecraft:soul_sand"
-		}
+		"B": "letsparkour:base_parkour_slab",
+	  	"S" : "minecraft:soul_sand"
 	},
 	"result": {
 		"id": "letsparkour:slow_parkour_slab",

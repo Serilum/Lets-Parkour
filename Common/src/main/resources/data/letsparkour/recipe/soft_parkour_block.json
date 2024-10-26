@@ -6,12 +6,8 @@
 		"BBB"
 	],
 	"key": {
-		"B": {
-			"item": "letsparkour:base_parkour_slab"
-		},
-	  	"H" : {
-		  	"item": "minecraft:hay_block"
-		}
+		"B": "letsparkour:base_parkour_slab",
+	  	"H" : "minecraft:hay_block"
 	},
 	"result": {
 		"id": "letsparkour:soft_parkour_slab",

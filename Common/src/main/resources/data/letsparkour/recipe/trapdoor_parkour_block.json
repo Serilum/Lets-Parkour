@@ -6,12 +6,8 @@
 		"BBB"
 	],
 	"key": {
-		"B": {
-			"item": "letsparkour:base_parkour_slab"
-		},
-	  	"T" : {
-		  	"tag": "minecraft:trapdoors"
-		}
+		"B": "letsparkour:base_parkour_slab",
+	  	"T" : "#minecraft:trapdoors"
 	},
 	"result": {
 		"id": "letsparkour:trapdoor_parkour_slab",
