@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "letsparkour:block/jelly_parkour_slab"
+    },
+    "type=double": {
+      "model": "letsparkour:block/jelly_parkour_block"
+    },
+    "type=top": {
+      "model": "letsparkour:block/jelly_parkour_slab_top"
+    }
+  }
+}

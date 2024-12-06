@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"BBB",
+		"BIB",
+		"BBB"
+	],
+	"key": {
+		"B": "letsparkour:base_parkour_slab",
+	  	"I" : "minecraft:ice"
+	},
+	"result": {
+		"id": "letsparkour:slippery_parkour_slab",
+	  	"count" : 8
+	}
+}
