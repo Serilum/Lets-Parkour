@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"LBL",
+		"BCB",
+		"LBL"
+	],
+	"key": {
+		"C": "minecraft:copper_ingot",
+		"B": "minecraft:brick",
+	  	"L": "#minecraft:logs"
+	},
+	"result": {
+		"id": "letsparkour:base_parkour_slab",
+	  	"count" : 8
+	}
+}

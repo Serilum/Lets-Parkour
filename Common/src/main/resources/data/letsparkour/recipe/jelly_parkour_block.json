@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"BBB",
+		"BSB",
+		"BBB"
+	],
+	"key": {
+		"B": "letsparkour:base_parkour_slab",
+	  	"S" : "minecraft:slime_block"
+	},
+	"result": {
+		"id": "letsparkour:jelly_parkour_slab",
+	  	"count" : 8
+	}
+}

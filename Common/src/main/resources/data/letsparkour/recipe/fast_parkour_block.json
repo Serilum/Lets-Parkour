@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"BBB",
+		"BSB",
+		"BBB"
+	],
+	"key": {
+		"B": "letsparkour:base_parkour_slab",
+	  	"S" : "minecraft:sugar"
+	},
+	"result": {
+		"id": "letsparkour:fast_parkour_slab",
+	  	"count" : 8
+	}
+}
