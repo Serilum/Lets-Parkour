@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"BBB",
+		"BTB",
+		"BBB"
+	],
+	"key": {
+		"B": "letsparkour:base_parkour_slab",
+	  	"T" : "#minecraft:trapdoors"
+	},
+	"result": {
+		"id": "letsparkour:trapdoor_parkour_slab",
+	  	"count" : 8
+	}
+}

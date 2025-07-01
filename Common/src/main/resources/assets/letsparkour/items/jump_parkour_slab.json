@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "letsparkour:block/jump_parkour_slab"
+  }
+}
