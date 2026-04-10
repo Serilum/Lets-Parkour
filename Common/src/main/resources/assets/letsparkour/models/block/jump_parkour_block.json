@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "letsparkour:block/jump_parkour_block",
+    "down": "letsparkour:block/jump_parkour_block",
+    "up": "letsparkour:block/jump_parkour_block",
+    "north": "letsparkour:block/parkour_block_side_a",
+    "south": "letsparkour:block/parkour_block_side_a",
+    "west": "letsparkour:block/parkour_block_side_a",
+    "east": "letsparkour:block/parkour_block_side_a"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "letsparkour:block/soft_parkour_block"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "letsparkour:block/illusion_parkour_block",
+    "side": "letsparkour:block/illusion_parkour_block",
+    "top": "letsparkour:block/illusion_parkour_block"
+  }
+}

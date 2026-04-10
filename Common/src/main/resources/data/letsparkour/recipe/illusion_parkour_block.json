@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"BBB",
+		"BEB",
+		"BBB"
+	],
+	"key": {
+		"B": "letsparkour:base_parkour_slab",
+	  	"E" : "minecraft:ender_pearl"
+	},
+	"result": {
+		"id": "letsparkour:illusion_parkour_slab",
+	  	"count" : 8
+	}
+}

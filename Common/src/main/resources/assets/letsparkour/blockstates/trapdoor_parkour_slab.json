@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,tilt=full": {
+      "model": "letsparkour:block/trapdoor_parkour_slab_full_tilt",
+      "y": 90
+    },
+    "facing=east,tilt=none": {
+      "model": "letsparkour:block/trapdoor_parkour_slab",
+      "y": 90
+    },
+    "facing=east,tilt=partial": {
+      "model": "letsparkour:block/trapdoor_parkour_slab_partial_tilt",
+      "y": 90
+    },
+    "facing=east,tilt=unstable": {
+      "model": "letsparkour:block/trapdoor_parkour_slab",
+      "y": 90
+    },
+    "facing=north,tilt=full": {
+      "model": "letsparkour:block/trapdoor_parkour_slab_full_tilt"
+    },
+    "facing=north,tilt=none": {
+      "model": "letsparkour:block/trapdoor_parkour_slab"
+    },
+    "facing=north,tilt=partial": {
+      "model": "letsparkour:block/trapdoor_parkour_slab_partial_tilt"
+    },
+    "facing=north,tilt=unstable": {
+      "model": "letsparkour:block/trapdoor_parkour_slab"
+    },
+    "facing=south,tilt=full": {
+      "model": "letsparkour:block/trapdoor_parkour_slab_full_tilt",
+      "y": 180
+    },
+    "facing=south,tilt=none": {
+      "model": "letsparkour:block/trapdoor_parkour_slab",
+      "y": 180
+    },
+    "facing=south,tilt=partial": {
+      "model": "letsparkour:block/trapdoor_parkour_slab_partial_tilt",
+      "y": 180
+    },
+    "facing=south,tilt=unstable": {
+      "model": "letsparkour:block/trapdoor_parkour_slab",
+      "y": 180
+    },
+    "facing=west,tilt=full": {
+      "model": "letsparkour:block/trapdoor_parkour_slab_full_tilt",
+      "y": 270
+    },
+    "facing=west,tilt=none": {
+      "model": "letsparkour:block/trapdoor_parkour_slab",
+      "y": 270
+    },
+    "facing=west,tilt=partial": {
+      "model": "letsparkour:block/trapdoor_parkour_slab_partial_tilt",
+      "y": 270
+    },
+    "facing=west,tilt=unstable": {
+      "model": "letsparkour:block/trapdoor_parkour_slab",
+      "y": 270
+    }
+  }
+}
