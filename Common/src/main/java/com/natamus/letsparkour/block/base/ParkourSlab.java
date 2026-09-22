@@ -1,7 +1,6 @@
 package com.natamus.letsparkour.block.base;
 
 import com.mojang.datafixers.util.Pair;
-import com.mojang.serialization.MapCodec;
 import com.natamus.letsparkour.data.ParkourBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -31,8 +30,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public class ParkourSlab extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
-    public static final MapCodec<ParkourSlab> CODEC = simpleCodec(ParkourSlab::new);
-
     public static final EnumProperty<SlabType> TYPE;
     public static final BooleanProperty WATERLOGGED;
     public static final IntegerProperty BLOCK_HEIGHT;
@@ -43,10 +40,6 @@ public class ParkourSlab extends HorizontalDirectionalBlock implements SimpleWat
     protected static final VoxelShape TOP_AABB;
 
     private final Set<BlockPos> processingPositions = new HashSet<>();
-
-    public @NotNull MapCodec<ParkourSlab> codec() {
-        return CODEC;
-    }
 
     public ParkourSlab(Properties properties) {
         super(properties);

@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Slice;
 @Mixin(value = ServerGamePacketListenerImpl.class, priority = 1001)
 public abstract class ServerGamePacketListenerImplMixin {
 	/* Disables the "moved too quickly" check because of fast parkour slabs */
-	@ModifyVariable(method = "handleMovePlayer(Lnet/minecraft/network/protocol/game/ServerboundMovePlayerPacket;)V", at = @At("STORE"), slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerPlayer;isFallFlying()Z")), ordinal = 0)
+	@ModifyVariable(method = "handlePlayerPositionChange(DDDFFZZ)V", at = @At("STORE"), slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerPlayer;isFallFlying()Z")), ordinal = 2)
 	public boolean overrideMovementCheck(boolean isFallFlying) {
 		return true;
 	}
