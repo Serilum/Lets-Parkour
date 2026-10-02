@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.natamus.letsparkour.mixin",
+  "package": "com.serilum.letsparkour.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
 	"EntityMixin",
