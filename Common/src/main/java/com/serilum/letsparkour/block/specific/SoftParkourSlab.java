@@ -1,0 +1,23 @@
+package com.serilum.letsparkour.block.specific;
+
+import com.serilum.letsparkour.block.base.ParkourSlab;
+import com.serilum.letsparkour.config.ConfigHandler;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
+
+public class SoftParkourSlab extends ParkourSlab {
+	public SoftParkourSlab(Properties properties) {
+		super(properties);
+	}
+
+	public void fallOn(@NotNull Level level, @NotNull BlockState state, @NotNull BlockPos pos, @NotNull Entity entity, float fallDistance) {
+		if (!ConfigHandler.enableSoftParkourBlock) {
+			return;
+		}
+
+		entity.causeFallDamage(fallDistance, 0.0F, level.damageSources().fall());
+	}
+}
